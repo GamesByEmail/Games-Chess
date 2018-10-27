@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMe, testMes } from '@gamesbyemail/base';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'chess-dev';
+  me:IMe=testMes.basic;
 }

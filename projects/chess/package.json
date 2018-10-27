@@ -1,0 +1,12 @@
+{
+  "name": "@gamesbyemail/games-chess",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/animations": "^6.1.10",
+    "@angular/cdk": "^6.4.7",
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@gamesbyemail/base": "^0.0.7"
+  },
+  "dependencies": {}
+}

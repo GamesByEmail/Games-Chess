@@ -9,6 +9,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "strict": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
@@ -16,6 +17,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "Chess": [
+        "dist/chess"
+      ],
+      "Chess/*": [
+        "dist/chess/*"
+      ]
+    }
   }
 }

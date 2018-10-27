@@ -1,16 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconRegistry } from '@angular/material';
 import { AppComponent } from './app.component';
+
+import { ChessModule } from '../../projects/chess/src/lib/chess.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    ChessModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(domSanitizer: DomSanitizer, matIconRegistry: MatIconRegistry) {
+    matIconRegistry.addSvgIcon("warning", domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/alert/baseline-warning-24px.svg"));
+    matIconRegistry.addSvgIcon("info", domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/action/baseline-info-24px.svg"));
+    matIconRegistry.addSvgIcon("flag", domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/content/baseline-flag-24px.svg"));
+    matIconRegistry.addSvgIcon("outlined_flag", domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/content/baseline-outlined_flag-24px.svg"));
+    matIconRegistry.addSvgIcon("ok", domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/action/baseline-check_circle-24px.svg"));
+    matIconRegistry.addSvgIcon("cancel", domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/navigation/baseline-cancel-24px.svg"));
+    matIconRegistry.addSvgIcon("menu", domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/navigation/baseline-menu-24px.svg"));
+  }
+}
