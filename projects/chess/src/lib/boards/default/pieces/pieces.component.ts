@@ -12,8 +12,8 @@ export interface IPieceKey {
 }
 @Component({
   selector: 'app-template-library',
-  templateUrl: './template-library.component.html',
-  styleUrls: ['./template-library.component.css']
+  templateUrl: './pieces.component.html',
+  styleUrls: ['./pieces.component.css']
 })
 export class PiecesComponent implements ITemplateLibrary {
   @ViewChildren(TemplateRef) templateRefs!: QueryList<TemplateRef<any>>;
