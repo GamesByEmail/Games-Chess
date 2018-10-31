@@ -1,0 +1,84 @@
+<gamesbyemail-base-rules [gameName]="'Chess'">
+  <h5><a name="Object">Object</a></h5>
+  <p>To put the opponent's king in 'Checkmate'.</p>
+  <h5><a name="Moves">Moves</a></h5>
+  <p>
+    The players take turns moving pieces as described below. The following conditions must be met for a legal move:
+  </p>
+  <ul>
+    <li>The player's king may not be in 'Check' at the end of the move.</li>
+    <li>The player must move a piece as described below.</li>
+  </ul>
+  <p>If either condition can not be met, the game is over. If the player's king is in '<a href="#Check">Check</a>' it
+    is termed 'Checkmate' and the player loses. If the player's king is not in '<a href="#Check">Check</a>', it is
+    termed a 'Statemate' and the game is a tie.</p>
+  <h5><a name="Check">Check</a></h5>
+  <p>A king is in 'Check' if the square it occupies is attacked by an opposing piece as described below.</p>
+  <h5><a name="Taking">Taking</a></h5>
+  <p>A piece is taken when an opposing piece moves to occupy it's square. The taken piece is removed from the board</p>
+  <h5><a name="Pieces">Pieces</a></h5>
+  <p>
+    <gamesbyemail-base-remotetemplate class="piece-image" [library]="templateLibrary" [key]="{type:'Pawn',team:team}"></gamesbyemail-base-remotetemplate>
+    <b><a name="Pieces.Pawns">Pawns</a></b> move directly forward one space if the space is not occupied. Pawns
+    can only attack one space diagonaly forward to either side, they cannot attack directly forward.
+  </p>
+  <p><a name="Pieces.Pawns.En Passant"><i>Two-space move and 'en passant':</i></a> If a pawn has not made a previous
+    move in the game, it may move forward two spaces if both spaces are not occupied. If the intermediate space is
+    attacked by an opposing pawn, the opponent has the option of 'taking' the pawn on the next move as if it had only
+    been moved one space. This right is called 'en passant' ('take in passing') and must be exercised immediately or
+    forfeited.</p>
+  <p><a name="Pieces.Pawns.Promoting"><i>Promoting:</i></a> If a pawn makes it to the other side it may be promoted
+    to any piece except a king.</p>
+  <p>
+    <gamesbyemail-base-remotetemplate class="piece-image" [library]="templateLibrary" [key]="{type:'Knight',team:team}"></gamesbyemail-base-remotetemplate>
+    <b><a name="Pieces.Knights">Knights</a></b> both move and attack in an L shape, either two spaces vertically
+    and one horizontally, or one vertically and two horizontally. Knights can jump over any piece (though any jumped
+    pieces are not removed) and therefore cannot be blocked.
+  </p>
+  <p>
+    <gamesbyemail-base-remotetemplate class="piece-image" [library]="templateLibrary" [key]="{type:'Bishop',team:team}"></gamesbyemail-base-remotetemplate>
+    <b><a name="Pieces.Bishops">Bishops</a></b> both move and attack any number of spaces diagonaly in a straight
+    line. They may may not jump pieces in their path and can therefore be blocked.
+  </p>
+  <p>
+    <gamesbyemail-base-remotetemplate class="piece-image" [library]="templateLibrary" [key]="{type:'Rook',team:team}"></gamesbyemail-base-remotetemplate>
+    <b><a name="Pieces.Rooks">Rooks</a></b> can both move and attack any number of spaces horizontaly or
+    vertically in a straight line. They may not jump pieces in their path and can therefore be blocked.
+  </p>
+  <p>
+    <gamesbyemail-base-remotetemplate class="piece-image" [library]="templateLibrary" [key]="{type:'Queen',team:team}"></gamesbyemail-base-remotetemplate>
+    <b><a name="Pieces.Queens">Queens</a></b> both move and attack any number of spaces in any direction in a
+    straight line. They may not jump pieces in their path and can therefore be blocked.
+  </p>
+  <p>
+    <gamesbyemail-base-remotetemplate class="piece-image" [library]="templateLibrary" [key]="{type:'King',team:team}"></gamesbyemail-base-remotetemplate>
+    <b><a name="Pieces.Kings">Kings</a></b> both move and attack one space in any direction.
+  </p>
+  <p><a name="Pieces.Kings.Castling"><i>Castling:</i></a> A king may move two spaces left or right and it's rook in
+    that
+    direction moved to occupy the intermediate space if all of the following additional conditions are also met:
+  </p>
+  <ul>
+    <li>The king has not made a previous move in the game.</li>
+    <li>The rook used has not made a previous move in the game.</li>
+    <li>All spaces between the king and the rook are unoccupied.</li>
+    <li>The king is not in '<a href="#Check">Check</a>'.</li>
+    <li>The space the king will pass through is not being attacked by an opposing piece.</li>
+  </ul>
+  <h5><a name="Dark Chess">Dark Chess</a></h5>
+  <p>
+    Dark Chess is a variant of traditional western Chess. All the pieces move in the same fashion. The differences
+    are:
+  </p>
+  <ul>
+    <li>A player is only able to see squares that their pieces are capable of moving to or attacking, hence the name
+      Dark Chess.</li>
+    <li>There is no concept of 'check'. Because of the above limitation, a king may mot be able to see all of it's
+      attackers. A player may make a move that results in their king being taken on the opponent's next move.</li>
+    <li>There is no concept of 'stalemate' because there is no check.</li>
+    <li>There is no concept of 'checkmate' because there is no check.</li>
+    <li>Since there is no concept of 'check' or 'checkmate', the object of the game is to capture the opponent's
+      king.</li>
+  </ul>
+  <gamesbyemail-games-chess-default-piecelibrary #templateLibrary></gamesbyemail-games-chess-default-piecelibrary>
+</gamesbyemail-base-rules>

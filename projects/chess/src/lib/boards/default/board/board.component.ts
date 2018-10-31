@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-board',
+  selector: 'gamesbyemail-games-chess-default-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })

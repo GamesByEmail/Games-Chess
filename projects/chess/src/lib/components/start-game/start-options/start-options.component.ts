@@ -3,11 +3,11 @@ import { ITeamConfig } from '@gamesbyemail/base';
 import { IOptions } from '@gamesbyemail/base';
 
 @Component({
-  selector: 'gamesbyemail-games-chess-startgameoptions',
-  templateUrl: './start-game-options.component.html',
-  styleUrls: ['./start-game-options.component.css']
+  selector: 'gamesbyemail-games-chess-startoptions',
+  templateUrl: './start-options.component.html',
+  styleUrls: ['./start-options.component.css']
 })
-export class StartGameOptionsComponent implements OnInit {
+export class StartOptionsComponent implements OnInit {
   @Input('teamConfig') teamConfig!: ITeamConfig
   @Input() options!: IOptions;
   @Output('change') emitter = new EventEmitter<string>();

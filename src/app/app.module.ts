@@ -4,7 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconRegistry } from '@angular/material';
 import { AppComponent } from './app.component';
 
-import { ChessModule } from '../../projects/chess/src/lib/chess.module';
+import { TestModule } from '@gamesbyemail/base';
+
+import { StartGameModule, JoinGameModule, RulesModule } from '../../projects/chess/src/public_api';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,10 @@ import { ChessModule } from '../../projects/chess/src/lib/chess.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ChessModule
+    StartGameModule,
+    JoinGameModule,
+    RulesModule,
+    TestModule
   ],
   providers: [],
   bootstrap: [AppComponent]

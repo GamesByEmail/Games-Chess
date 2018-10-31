@@ -11,7 +11,7 @@ export interface IPieceKey {
   resigned?: boolean;
 }
 @Component({
-  selector: 'app-template-library',
+  selector: 'gamesbyemail-games-chess-default-piecelibrary',
   templateUrl: './pieces.component.html',
   styleUrls: ['./pieces.component.css']
 })

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IMe, testMes } from '@gamesbyemail/base';
+import { testData } from './test-data';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,5 @@ import { IMe, testMes } from '@gamesbyemail/base';
 })
 export class AppComponent {
   me:IMe=testMes.basic;
+  game=testData.darkChess;
 }

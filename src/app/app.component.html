@@ -1,4 +1,10 @@
-<fieldset>
-  <legend>This is a start game form</legend>
+<gamesbyemail-base-test [game-name]="'Test'" [start-game]="startGame" [join-game]="joinGame" [rules]="rules"></gamesbyemail-base-test>
+<ng-template #startGame>
   <gamesbyemail-games-chess-startgame [me]="me"></gamesbyemail-games-chess-startgame>
-</fieldset>
+</ng-template>
+<ng-template #joinGame>
+  <gamesbyemail-games-chess-joingame [me]="me" [game]="game"></gamesbyemail-games-chess-joingame>
+</ng-template>
+<ng-template #rules>
+  <gamesbyemail-games-chess-rules></gamesbyemail-games-chess-rules>
+</ng-template>
