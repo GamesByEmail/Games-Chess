@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { TestModule } from '@gamesbyemail/base';
 
-import { StartGameModule, JoinGameModule, RulesModule } from '../../projects/chess/src/public_api';
+import { StartGameModule, JoinGameModule, RulesModule, PlayModule } from '../../projects/chess/src/public_api';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { StartGameModule, JoinGameModule, RulesModule } from '../../projects/che
     StartGameModule,
     JoinGameModule,
     RulesModule,
+    PlayModule,
     TestModule
   ],
   providers: [],

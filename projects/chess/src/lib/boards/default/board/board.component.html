@@ -1,3 +1,29 @@
-<p>
-  board works!
-</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 582">
+  <g [attr.transform]="boardTransform(0,40,512,512)">
+    <rect x="0" y="0" width="512" height="512" color="border" />
+    <rect #boardArea x="12" y="12" width="488" height="488" />
+    <g transform="translate(8,8)">
+      <g *ngFor="let territory of game.board.territories" [attr.transform]="territoryTransform(territory,62,62)">
+        <rect width="62" height="62" [ngClass]="classes(territory)" (mousedown)="territoryMousedown(territory,$event)"
+          (mouseup)="territoryMouseup(territory,$event)" />
+        <rect *ngIf="(game.over || !territory.dark) && territory.highlight" x="1" y="1" width="60" height="60" class="highlight" />
+      </g>
+      <g *ngFor="let territory of game.board.territories">
+        <g *ngIf="(game.over || !territory.dark) && territory.piece" [attr.transform]="territoryTransform(territory,62,62,true)">
+          <g [template-projection]="templateLibrary" [bindElement]="territory.piece" [entity]="territory.piece"
+            [context]="{dark:territory.dark}" class="piece" [@showCheck]="territory.piece.showCheck"></g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g *ngFor="let team of game.teams" [attr.transform]="'translate(0,'+(team.id===game.perspective ? 577 : 35)+')'">
+    <g transform="translate(0,-26)">
+      <g *ngFor="let piece of team.captures;let i=index" [attr.transform]="'translate('+(25*i)+',0)'"
+        [template-projection]="templateLibrary" [bindElement]="piece" [entity]="piece" class="piece"></g>
+    </g>
+    <text x="512" y="0" style="font: bold 30px sans-serif;text-anchor:end;">{{team.player.title}}</text>
+  </g>
+  <svg xmlns="http://www.w3.org/2000/svg" #dialogArea x="0" y="40" width="512" height="512"></svg>
+</svg>
+<gamesbyemail-games-chess-default-log #log [game]="game" [pieces]="templateLibrary"></gamesbyemail-games-chess-default-log>
+<gamesbyemail-games-chess-default-piecelibrary #templateLibrary></gamesbyemail-games-chess-default-piecelibrary>

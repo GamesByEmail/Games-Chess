@@ -1,7 +1,6 @@
-import { IPlayer } from '@gamesbyemail/base';
-import { ITeamConfig } from '@gamesbyemail/base';
+import { IStartTeamConfig, IStartPlayer } from '@gamesbyemail/base';
 
-const players: IPlayer[] = [
+const players: IStartPlayer[] = [
   {
     user: undefined
   },
@@ -10,7 +9,7 @@ const players: IPlayer[] = [
   }
 ];
 
-export const teamConfigs: ITeamConfig[] = [
+export const teamConfigs: IStartTeamConfig[] = [
   {
     teams: [
       {

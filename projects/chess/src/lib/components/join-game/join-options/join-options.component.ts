@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IGame } from '@gamesbyemail/base';
+import { IStartGame } from '@gamesbyemail/base';
 
 @Component({
   selector: 'gamesbyemail-games-chess-joinoptions',
@@ -7,7 +7,7 @@ import { IGame } from '@gamesbyemail/base';
   styleUrls: ['./join-options.component.css']
 })
 export class JoinOptionsComponent {
-  @Input('game') game!: IGame;
+  @Input('game') game!: IStartGame;
   dummy: any;
 
   optionChosen(optionName: string, value?: any): boolean {

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
-import { ITeamConfig } from '@gamesbyemail/base';
-import { IOptions } from '@gamesbyemail/base';
+import { IStartTeamConfig, IStartOptions } from '@gamesbyemail/base';
 
 @Component({
   selector: 'gamesbyemail-games-chess-startoptions',
@@ -8,8 +7,8 @@ import { IOptions } from '@gamesbyemail/base';
   styleUrls: ['./start-options.component.css']
 })
 export class StartOptionsComponent implements OnInit {
-  @Input('teamConfig') teamConfig!: ITeamConfig
-  @Input() options!: IOptions;
+  @Input('teamConfig') teamConfig!: IStartTeamConfig
+  @Input() options!: IStartOptions;
   @Output('change') emitter = new EventEmitter<string>();
 
   ngOnInit(): void {

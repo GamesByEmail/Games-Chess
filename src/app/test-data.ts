@@ -1,10 +1,10 @@
 import {
-  IGame,
+  IStartGame,
   testMes
 } from '@gamesbyemail/base';
 
 
-export const testData:{[key:string]:IGame} = {
+export const testData:{[key:string]:IStartGame} = {
   chess: {
     title: "Chess game",
     teams: [

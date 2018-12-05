@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { teamConfigs } from './team-configs';
-import { IMe, ITeamConfig } from '@gamesbyemail/base';
+import { IMe, IStartTeamConfig } from '@gamesbyemail/base';
+import { deepCopy } from '@packageforge/deep-copy';
 
 @Component({
   selector: 'gamesbyemail-games-chess-startgame',
@@ -9,7 +10,8 @@ import { IMe, ITeamConfig } from '@gamesbyemail/base';
 })
 export class StartGameComponent {
 
-  teamConfigs: ITeamConfig[] = teamConfigs;
   @Input() me!: IMe;
+  teamConfigs: IStartTeamConfig[] = deepCopy(teamConfigs);
+
 
 }

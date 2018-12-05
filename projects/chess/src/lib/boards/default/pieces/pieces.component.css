@@ -5,8 +5,20 @@
   fill:#000000;
 }
 .black-color {
-  fill:#ffffff;
+  fill:#000000;
 }
 .black-contrast {
+  fill:#ffffff;
+}
+.dark .white-color {
+  fill:#888888;
+}
+.dark .white-contrast {
   fill:#000000;
+}
+.dark .black-color {
+  fill:#000000;
+}
+.dark .black-contrast {
+  fill:#888888;
 }

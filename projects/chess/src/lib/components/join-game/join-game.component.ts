@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IMe, IGame } from '@gamesbyemail/base';
+import { IMe, IStartGame } from '@gamesbyemail/base';
 
 @Component({
   selector: 'gamesbyemail-games-chess-joingame',
@@ -9,7 +9,7 @@ import { IMe, IGame } from '@gamesbyemail/base';
 export class JoinGameComponent {
 
   @Input() me!: IMe;
-  @Input() game!:IGame;
+  @Input() game!:IStartGame;
 
   constructor() { }
 
