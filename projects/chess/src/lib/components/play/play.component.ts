@@ -27,8 +27,8 @@ export class PlayComponent implements OnInit {
           moveNumber: 0,
           //board:"rnbqkbnrpppppppp                                q  r r      K   ",
           //board:"rnbqkbnrpppppppp                                pPPPPPPPRNBQKBNR",
-          board: "rnbqkbnrpppppppp                                PPPPPPPPRNBQKBNR",
           //board:"r   k  rpppppppp                            p   PPPPPPPPR   K  R",
+          board: "rnbqkbnrpppppppp                                PPPPPPPPRNBQKBNR",
           teams: [
             '@tt',
             'tt'

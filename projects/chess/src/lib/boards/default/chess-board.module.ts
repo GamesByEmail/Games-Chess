@@ -7,7 +7,7 @@ import { BindElementModule, BoardService } from '@gamesbyemail/base';
 import { BoardComponent } from './board/board.component';
 import { LogComponent } from './log/log.component';
 import { PiecesComponent } from './pieces/pieces.component';
-import { PromoteDialogModule } from './dialogs/promote/service/promote-dialog.module';
+import { PromoteDialogModule } from './dialogs/promote/promote-dialog.module';
 import { EntriesComponent } from './log/entries/entries.component';
 
 @NgModule({

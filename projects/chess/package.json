@@ -8,7 +8,7 @@
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
     "@packageforge/deep-copy": "0.0.1",
     "@packageforge/geometry2d": "0.0.4",
-    "@packageforge/svg-dialog": "0.0.7",
+    "@packageforge/svg-dialog": "0.0.10",
     "@packageforge/template-projection": "0.0.1",
     "ts-deferred": "^1.0.4"
   },

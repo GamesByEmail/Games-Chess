@@ -2,12 +2,12 @@ import { Component, Input, ElementRef, ViewChild, AfterViewInit, ViewContainerRe
 import { trigger, state, style, animate, transition, sequence } from '@angular/animations';
 
 import { BoardService } from '@gamesbyemail/base';
-import { PromoteDialogService } from '../dialogs/promote/service/promote-dialog.service';
+import { PromoteDialogService } from '../dialogs/promote/promote-dialog.service';
 
 import { Territory } from '../../../game/territory';
 import { Game } from '../../../game/game';
 import { fromEvent, Subscription, Observable, Subject, race } from 'rxjs';
-import { switchMap, map, takeUntil, flatMap } from 'rxjs/operators';
+import { switchMap, map, takeUntil } from 'rxjs/operators';
 import { Point2D, Rectangle2D } from '@packageforge/geometry2d';
 import { PieceChar } from '../../../game/piece';
 
