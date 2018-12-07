@@ -16,14 +16,12 @@
 .highlight {
   fill:none;
   stroke:rgb(0,0,255);
-  stroke-width:2;
+  stroke-width:1;
 }
 .piece {
-  pointer-events: none;
-}
-.piece ::ng-deep svg {
   width: 62px;
   height: 62px;
+  pointer-events: none;
 }
 .movable {
   cursor:pointer;

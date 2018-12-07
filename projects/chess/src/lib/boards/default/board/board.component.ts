@@ -80,7 +80,7 @@ export class BoardComponent implements AfterViewInit {
               this.game.incrementTurn();
             else {
               this.game.restore();
-              target.setAttribute("transform", "translate(" + startTrans.x + "," + startTrans.y + ")");
+              this.boardService.setTranslation(target,startTrans);
             }
           });
         }))
