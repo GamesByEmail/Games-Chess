@@ -39,6 +39,7 @@ export class BoardComponent implements AfterViewInit {
   @Input() game!: Game;
   @ViewChild('boardArea') boardArea!: ElementRef<SVGElement>;
   @ViewChild('dialogArea', { read: ViewContainerRef }) dialogArea!: ViewContainerRef;
+  @ViewChild('dialogOverlay', { read: ElementRef }) dialogOverlay!: ElementRef;
   @ViewChild('templateLibrary') pieceLibrary!: any;
 
   mousemove: Observable<MouseEvent> = <any>fromEvent(document, 'mousemove');
@@ -50,19 +51,23 @@ export class BoardComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.game.board.controller = this;
   }
-
+  get perspectiveTeam() {
+    return this.game.findTeam(this.game.perspective);
+  }
+  get opposingTeam() {
+    return this.perspectiveTeam.getOpponent();
+  }
   territoryMouseup(territory: Territory) {
     this.territoryUp.next(territory);
   }
-
   territoryMousedown(fromTerritory: Territory, md: MouseEvent) {
     if (this.game.over || !fromTerritory.piece || !fromTerritory.piece.isUs() || !fromTerritory.piece.team.myTurn)
       return;
     const target = <SVGElement>fromTerritory.piece.elementRef!.nativeElement;
     if (!target)
       return;
-    this.game.beginningMove();
     this.game.save();
+    this.game.beginningMove();
     this.boardService.moveToTopOfStack(target);
     const startRect = new Rectangle2D(target.getBoundingClientRect());
     const start = startRect.center();
@@ -119,7 +124,7 @@ export class BoardComponent implements AfterViewInit {
   }
   openPromote(teamColor: string): Promise<PieceChar | undefined> {
     return new Promise((resolve, reject) => {
-      this.promoteDialogService.open(this.dialogArea, { pieceLibrary: this.pieceLibrary, teamColor: teamColor })
+      this.promoteDialogService.open(this.dialogArea, { pieceLibrary: this.pieceLibrary, teamColor: teamColor }, this.dialogOverlay)
         .afterClosed()
         .subscribe(value => {
           resolve(value);

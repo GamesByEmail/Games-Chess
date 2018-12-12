@@ -25,10 +25,10 @@
     "@gamesbyemail/base": "^0.0.13",
     "@packageforge/deep-copy": "0.0.1",
     "@packageforge/geometry2d": "0.0.4",
-    "@packageforge/svg-dialog": "0.0.10",
+    "@packageforge/svg-dialog": "0.0.12",
     "@packageforge/template-projection": "0.0.1",
     "core-js": "^2.6.0",
-    "npm": "^6.4.1",
+    "npm": "^6.5.0",
     "rxjs": "~6.2.0",
     "ts-deferred": "^1.0.4",
     "zone.js": "~0.8.26"

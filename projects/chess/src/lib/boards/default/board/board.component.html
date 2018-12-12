@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 291">
-  <g [attr.transform]="boardTransform(0,20,256,256)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 306" style="width:66%">
+  <text x="128" y="3" text-anchor="middle" alignment-baseline="hanging" style="font: bold 20px sans-serif">{{game.header}}</text>
+  <g [attr.transform]="boardTransform(0,35,256,256)">
     <rect x="0" y="0" width="256" height="256" color="border" />
     <rect #boardArea x="6" y="6" width="244" height="244" />
     <g transform="translate(4,4)">
@@ -15,15 +16,29 @@
         </g>
       </g>
     </g>
+    <rect #dialogOverlay x="0" y="0" width="256" height="256" fill="rgba(0,0,0,0.4)" style="display:none"/>
   </g>
-  <g *ngFor="let team of game.teams" [attr.transform]="'translate(0,'+(team.id===game.perspective ? 289 : 18)+')'">
-    <g transform="translate(0,-13)">
-      <svg *ngFor="let piece of team.captures;let i=index" width="13" height="13" [attr.transform]="'translate('+(13*i)+',0)'"
-        [template-projection]="templateLibrary" [bindElement]="piece" [entity]="piece" class="piece"></svg>
-    </g>
-    <text x="256" y="0" style="font: bold 15px sans-serif;text-anchor:end;">{{team.player.title}}</text>
+  <g transform="translate(128 170.5) scale(0.5)">
+    <g #dialogArea></g>
   </g>
-  <svg xmlns="http://www.w1.5.org/1000/svg" #dialogArea x="0" y="20" width="256" height="256"></svg>
+  <g transform="translate(0,35)">
+    <text x="256" text-anchor="end" style="font: bold 15px sans-serif">
+      <tspan *ngIf="opposingTeam.myTurn" alignment-baseline="after-edge">&#10145; </tspan>
+      <tspan alignment-baseline="after-edge" dy="-4" style="font-size:60%; font-weight:normal">{{opposingTeam.getTitle()}} - </tspan>
+      <tspan alignment-baseline="after-edge" dy="4">{{opposingTeam.player.title}}</tspan>
+    </text>
+    <svg *ngFor="let piece of opposingTeam.captures;let i=index" [attr.x]="i*13" y="-14" width="13" height="13"
+      [template-projection]="templateLibrary" [bindElement]="piece" [entity]="piece" class="piece"></svg>
+  </g>
+  <g transform="translate(0,291)">
+    <text x="256" text-anchor="end" style="font: bold 15px sans-serif">
+      <tspan *ngIf="perspectiveTeam.myTurn" alignment-baseline="hanging">&#10145; </tspan>
+      <tspan alignment-baseline="hanging" dy="4" style="font-size:60%; font-weight:normal">{{perspectiveTeam.getTitle()}} - </tspan>
+      <tspan alignment-baseline="hanging" dy="-4">{{perspectiveTeam.player.title}}</tspan>
+    </text>
+    <svg *ngFor="let piece of perspectiveTeam.captures;let i=index" [attr.x]="i*13" y="1" width="13" height="13"
+      [template-projection]="templateLibrary" [bindElement]="piece" [entity]="piece" class="piece"></svg>
+  </g>
 </svg>
 <gamesbyemail-games-chess-default-log #log [game]="game" [pieces]="templateLibrary"></gamesbyemail-games-chess-default-log>
 <gamesbyemail-games-chess-default-piecelibrary #templateLibrary></gamesbyemail-games-chess-default-piecelibrary>

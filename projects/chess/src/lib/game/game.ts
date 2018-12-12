@@ -15,6 +15,7 @@ export interface IGameState extends IBaseGameState<Game, IGameOptions, IGameStat
 }
 
 export interface IGameSave extends IBaseGameSave<Game, IGameOptions, IGameState, IGameSave, Board, IBoardSave, Territory, ITerritorySave, Team, TeamId, ITeamSave, Move, IModMove> {
+  header: string;
 }
 export class Game extends BaseGame<Game, IGameOptions, IGameState, IGameSave, Board, IBoardSave, Territory, ITerritorySave, Team, TeamId, ITeamSave, Move, IModMove> {
   constructor() {
@@ -23,18 +24,41 @@ export class Game extends BaseGame<Game, IGameOptions, IGameState, IGameSave, Bo
     this._teams.push(new Team(this, TeamId.White), new Team(this, TeamId.Black));
     Object.freeze(this._teams);
   }
+  header:string="";
 
   public setState(state: IGameState) {
     super.setState(state);
     if (this.options.dark)
       this.board.setDark(this.findUsPlayer(true) || this.findUsPlayer());
+    this.header="";
     if (this.lastMoves.length > 0) {
       const move = this.lastMoves[0];
       if (isIMove(move)) {
         this.board.territories[move.from].highlight = true;
         this.board.territories[move.to].highlight = true;
+        if (move.canMove===false)
+          if (move.inCheck)
+            this.header="Checkmate";
+          else
+            this.header="Stalemate";
+        else
+          if (move.inCheck)
+            this.header="Check";
       }
     }
+  }
+  saving(): IGameSave {
+    const saved=super.saving();
+    saved.header=this.header;
+    return saved;
+  }
+  restoring(saved: IGameSave) {
+    super.restoring(saved);
+    this.header=saved.header;
+  }
+  beginningMove() {
+    super.beginningMove();
+    this.header="";
   }
 
   public incrementTurn() {
@@ -54,20 +78,10 @@ export class Game extends BaseGame<Game, IGameOptions, IGameState, IGameSave, Bo
       if (!canMove)
         this.modLog({ canMove: false });
       turnTeam.myTurn = false;
-      if (canMove) {
+      if (canMove)
         opponent.myTurn = true;
-        if (isInCheck) {
-          console.log("CHECK");
-        }
-      } else {
+      else
         this._over=true;
-        if (isInCheck) {
-          console.log("CHECKMATE");
-        }
-        else {
-          console.log("STALEMATE");
-        }
-      }
     }
     const state = this.commit();
     this.setState(state);

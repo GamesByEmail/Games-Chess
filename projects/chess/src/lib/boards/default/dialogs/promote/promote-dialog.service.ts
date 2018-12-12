@@ -1,4 +1,4 @@
-import { Injectable, ViewContainerRef } from '@angular/core';
+import { Injectable, ViewContainerRef, ElementRef } from '@angular/core';
 import { SvgDialogService } from '@packageforge/svg-dialog';
 import { PromoteDialogComponent } from './promote-dialog.component';
 import { PieceChar } from '../../../../game/piece';
@@ -10,7 +10,7 @@ export class PromoteDialogService {
 
   constructor(private svgDialogService: SvgDialogService) { }
 
-  open(outlet: ViewContainerRef, data?: any) {
-    return this.svgDialogService.open<PieceChar | undefined>(outlet, PromoteDialogComponent, data);
+  open(outlet: ViewContainerRef, data?: any, overlay?: ElementRef<SVGElement>) {
+    return this.svgDialogService.open<PieceChar | undefined>(outlet, PromoteDialogComponent, data, overlay);
   }
 }
