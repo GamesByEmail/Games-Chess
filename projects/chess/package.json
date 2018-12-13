@@ -6,12 +6,12 @@
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@gamesbyemail/base": "^0.0.13",
+    "@gamesbyemail/base": "^0.0.14",
     "@packageforge/deep-copy": "0.0.1",
     "@packageforge/geometry2d": "0.0.4",
     "@packageforge/svg-dialog": "0.0.12",
     "@packageforge/template-projection": "0.0.1",
-    "ts-deferred": "^1.0.4"
+    "@packageforge/deferred": "0.0.4"
   },
   "dependencies": {}
 }

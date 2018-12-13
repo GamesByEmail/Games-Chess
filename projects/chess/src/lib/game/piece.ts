@@ -7,7 +7,7 @@ import { TeamId } from './team-id';
 import { IPieceKey } from './i-piece-key';
 import { ElementRef } from '@angular/core';
 import { Rectangle2D } from '@packageforge/geometry2d';
-import { Deferred } from 'ts-deferred';
+import { Deferred } from '@packageforge/deferred';
 
 export type PieceChar = 'p' | 'r' | 'n' | 'b' | 'q' | 'k' | 'P' | 'R' | 'N' | 'B' | 'Q' | 'K';
 export interface IPieceSave {

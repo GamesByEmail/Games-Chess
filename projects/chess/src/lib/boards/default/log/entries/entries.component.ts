@@ -1,5 +1,5 @@
 import { Component, TemplateRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
-import { Deferred } from 'ts-deferred';
+import { Deferred } from '@packageforge/deferred';
 
 import { ITemplateLibrary, ITemplateSize, TemplateLibraryService } from '@packageforge/template-projection';
 

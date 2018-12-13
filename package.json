@@ -22,15 +22,15 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-    "@gamesbyemail/base": "^0.0.13",
+    "@gamesbyemail/base": "^0.0.14",
     "@packageforge/deep-copy": "0.0.1",
+    "@packageforge/deferred": "0.0.4",
     "@packageforge/geometry2d": "0.0.4",
     "@packageforge/svg-dialog": "0.0.12",
     "@packageforge/template-projection": "0.0.1",
     "core-js": "^2.6.0",
     "npm": "^6.5.0",
     "rxjs": "~6.2.0",
-    "ts-deferred": "^1.0.4",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
