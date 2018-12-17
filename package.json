@@ -1,5 +1,5 @@
 {
-  "name": "chess-dev",
+  "name": "chess",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

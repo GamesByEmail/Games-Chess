@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { TestModule } from '@gamesbyemail/base';
 
-import { StartGameModule, JoinGameModule, RulesModule, PlayModule } from '../../projects/chess/src/public_api';
+import { StartGameModule, JoinGameModule, RulesModule, PlayModule } from '../../projects/game/src/public_api';
 
 @NgModule({
   declarations: [

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "chess-dev": {
+    "Chess": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/chess-dev",
+            "outputPath": "dist/Chess",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "chess-dev:build"
+            "browserTarget": "Chess:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "chess-dev:build:production"
+              "browserTarget": "Chess:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "chess-dev:build"
+            "browserTarget": "Chess:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "chess-dev-e2e": {
+    "Chess-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "chess-dev:serve"
+            "devServerTarget": "Chess:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "chess-dev:serve:production"
+              "devServerTarget": "Chess:serve:production"
             }
           }
         },
@@ -122,33 +122,33 @@
         }
       }
     },
-    "Chess": {
-      "root": "projects/chess",
-      "sourceRoot": "projects/chess/src",
+    "game": {
+      "root": "projects/game",
+      "sourceRoot": "projects/game/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/chess/tsconfig.lib.json",
-            "project": "projects/chess/ng-package.json"
+            "tsConfig": "projects/game/tsconfig.lib.json",
+            "project": "projects/game/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/chess/src/test.ts",
-            "tsConfig": "projects/chess/tsconfig.spec.json",
-            "karmaConfig": "projects/chess/karma.conf.js"
+            "main": "projects/game/src/test.ts",
+            "tsConfig": "projects/game/tsconfig.spec.json",
+            "karmaConfig": "projects/game/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/chess/tsconfig.lib.json",
-              "projects/chess/tsconfig.spec.json"
+              "projects/game/tsconfig.lib.json",
+              "projects/game/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -158,5 +158,5 @@
       }
     }
   },
-  "defaultProject": "chess-dev"
+  "defaultProject": "Chess"
 }

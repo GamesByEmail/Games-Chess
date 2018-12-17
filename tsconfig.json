@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "Chess": [
-        "dist/chess"
+      "game": [
+        "dist/game"
       ],
-      "Chess/*": [
-        "dist/chess/*"
+      "game/*": [
+        "dist/game/*"
       ]
     }
   }
