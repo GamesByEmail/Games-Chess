@@ -55,12 +55,12 @@ export class BoardComponent implements AfterViewInit {
     return this.game.findTeam(this.game.perspective);
   }
   get opposingTeam() {
-    return this.perspectiveTeam.getOpponent();
+    return this.perspectiveTeam.getNext(true)!;
   }
   territoryMouseup(territory: Territory) {
     this.territoryUp.next(territory);
   }
-  territoryMousedown(fromTerritory: Territory, md: MouseEvent) {
+  territoryMousedown(fromTerritory: Territory) {
     if (this.game.over || !fromTerritory.piece || !fromTerritory.piece.isUs() || !fromTerritory.piece.team.myTurn)
       return;
     const target = <SVGElement>fromTerritory.piece.elementRef!.nativeElement;

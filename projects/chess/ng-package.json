@@ -2,6 +2,14 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/chess",
   "lib": {
-    "entryFile": "src/public_api.ts"
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@gamesbyemail/base": "@gamesbyemail/base",
+      "@packageforge/deep-copy": "@packageforge/deep-copy",
+      "@packageforge/deferred": "@packageforge/deferred",
+      "@packageforge/geometry2d": "@packageforge/geometry2d",
+      "@packageforge/svg-dialog": "@packageforge/svg-dialog",
+      "@packageforge/template-projection": "@packageforge/template-projection"
+    }
   }
 }

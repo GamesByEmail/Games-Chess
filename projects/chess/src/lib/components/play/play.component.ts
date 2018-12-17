@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../../game/game';
+import { TeamId } from '../../game/team-id';
 
 @Component({
   selector: 'gamesbyemail-games-chess-play',
@@ -22,13 +23,14 @@ export class PlayComponent implements OnInit {
       options: {
         dark: false
       },
+      perspective:TeamId.White,
       states: [
         {
           moveNumber: 0,
           //board:"rnbqkbnrpppppppp                                q  r r      K   ",
-          board:"rnbqkbnrpppppppp                                pPPPPPPPRNBQKBNR",
+          //board:"rnbqkbnrpppppppp                                pPPPPPPPRNBQKBNR",
           //board:"r   k  rpppppppp                            p   PPPPPPPPR   K  R",
-          //board: "rnbqkbnrpppppppp                                PPPPPPPPRNBQKBNR",
+          board: "rnbqkbnrpppppppp                                PPPPPPPPRNBQKBNR",
           teams: [
             '@tt',
             'tt'

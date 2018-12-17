@@ -63,7 +63,7 @@ export class Game extends BaseGame<Game, IGameOptions, IGameState, IGameSave, Bo
 
   public incrementTurn() {
     const turnTeam = this.findTurnTeam()!;
-    const opponent = turnTeam.getOpponent()!;
+    const opponent = turnTeam.getNext()!;
     if (this.options.dark) {
       turnTeam.myTurn = false;
       if (this.board.anyKingsLeft(opponent))

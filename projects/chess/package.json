@@ -1,17 +1,16 @@
 {
   "name": "@gamesbyemail/games-chess",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
-    "@angular/animations": "^6.1.10",
-    "@angular/cdk": "^6.4.7",
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@gamesbyemail/base": "^0.0.14",
-    "@packageforge/deep-copy": "0.0.1",
-    "@packageforge/geometry2d": "0.0.4",
-    "@packageforge/svg-dialog": "0.0.12",
-    "@packageforge/template-projection": "0.0.1",
-    "@packageforge/deferred": "0.0.4"
-  },
-  "dependencies": {}
+    "@angular/animations": "^7.1.3",
+    "@angular/cdk": "^7.1.1",
+    "@angular/common": "^7.1.3",
+    "@angular/core": "^7.1.3",
+    "@gamesbyemail/base": "^0.0.21",
+    "@packageforge/deep-copy": "^0.0.2",
+    "@packageforge/deferred": "^0.0.5",
+    "@packageforge/geometry2d": "^0.0.10",
+    "@packageforge/svg-dialog": "^0.0.13",
+    "@packageforge/template-projection": "^0.0.2"
+  }
 }

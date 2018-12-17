@@ -17,6 +17,8 @@ export class PiecesComponent implements ITemplateLibrary, AfterViewInit {
   private initDefer = new Deferred();
   ngAfterViewInit(): void {
     this.initDefer.resolve();
+    // Following line is to keep build from complaining about unused QueryList
+    this.templateRefs instanceof QueryList;
   }
   getTemplate(key: IPieceKey): Promise<TemplateRef<any> | undefined> {
     return this.initDefer.promise.then(() => {

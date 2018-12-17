@@ -5,8 +5,8 @@
     <rect #boardArea x="6" y="6" width="244" height="244" />
     <g transform="translate(4,4)">
       <g *ngFor="let territory of game.board.territories" [attr.transform]="territoryTransform(territory,31,31)">
-        <rect width="31" height="31" [ngClass]="classes(territory)" (mousedown)="territoryMousedown(territory,$event)"
-          (mouseup)="territoryMouseup(territory,$event)" />
+        <rect width="31" height="31" [ngClass]="classes(territory)" (mousedown)="territoryMousedown(territory)"
+          (mouseup)="territoryMouseup(territory)" />
         <rect *ngIf="(game.over || !territory.dark) && territory.highlight" x="0.5" y="0.5" width="30" height="30" class="highlight" />
       </g>
       <g *ngFor="let territory of game.board.territories">

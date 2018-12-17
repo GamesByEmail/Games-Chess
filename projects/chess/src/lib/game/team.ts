@@ -24,14 +24,8 @@ export class Team extends BaseTeam<Game, IGameOptions, IGameState, IGameSave, Bo
     piece.changeTerritory(undefined);
     this.captures.push(piece);
   }
-  getOpponent(): Team {
-    for (let i = 0; i < this.game.teams.length; i++)
-      if (this.game.teams[i] !== this)
-        return this.game.teams[i];
-    throw "no opponent found";
-  }
   getTitle(): string {
-    return this.id === TeamId.Black ? "Black" : "White";
+    return this.id;
   }
   setState(state: string): string {
     state=super.setState(state);

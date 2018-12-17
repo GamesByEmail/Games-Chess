@@ -10,7 +10,7 @@ import { PieceChar } from '../../../../game/piece';
 export class PromoteDialogComponent {
   constructor(public dialogRef: SvgDialogRef<PieceChar | undefined>, @Inject(SVG_DIALOG_DATA) public data: any) {
   }
-  close(value: PieceChar | undefined) {
+  close(value?: PieceChar) {
     this.dialogRef.close(value);
   }
   dialogSize={

@@ -12,9 +12,12 @@ export class LogComponent {
 
   constructor() { }
 
-  gridArea(index:number,asdf?:boolean):string {
-    const row=Math.floor((index+1)/2)+1;
-    const col=asdf ? 1 : index===0 ? 2 : (index+1)%2+2;
-    return row+" / "+col;
+  gridArea(index: number, bullet?: boolean): string {
+    if (index === 0)
+      return bullet ? "1 / 1" : "1 / 2 / 1 / " + this.game.teams.length;
+    index--;
+    const row = Math.floor(index / this.game.teams.length) + 2;
+    const col = bullet ? 1 : index % this.game.teams.length + 2;
+    return row + " / " + col;
   }
 }
