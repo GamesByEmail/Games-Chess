@@ -32,5 +32,5 @@ import { EntriesComponent } from './log/entries/entries.component';
     BoardService
   ]
 })
-export class ChessBoardModule {
+export class BoardModule {
 }

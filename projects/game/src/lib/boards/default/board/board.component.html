@@ -24,7 +24,7 @@
   <g transform="translate(0,35)">
     <text x="256" text-anchor="end" style="font: bold 15px sans-serif">
       <tspan *ngIf="opposingTeam.myTurn" alignment-baseline="after-edge">&#10145; </tspan>
-      <tspan alignment-baseline="after-edge" dy="-4" style="font-size:60%; font-weight:normal">{{opposingTeam.getTitle()}} - </tspan>
+      <tspan alignment-baseline="after-edge" dy="-4" style="font-size:60%; font-weight:normal">{{opposingTeam.title}} - </tspan>
       <tspan alignment-baseline="after-edge" dy="4">{{opposingTeam.player.title}}</tspan>
     </text>
     <svg *ngFor="let piece of opposingTeam.captures;let i=index" [attr.x]="i*13" y="-14" width="13" height="13"
@@ -33,7 +33,7 @@
   <g transform="translate(0,291)">
     <text x="256" text-anchor="end" style="font: bold 15px sans-serif">
       <tspan *ngIf="perspectiveTeam.myTurn" alignment-baseline="hanging">&#10145; </tspan>
-      <tspan alignment-baseline="hanging" dy="4" style="font-size:60%; font-weight:normal">{{perspectiveTeam.getTitle()}} - </tspan>
+      <tspan alignment-baseline="hanging" dy="4" style="font-size:60%; font-weight:normal">{{perspectiveTeam.title}} - </tspan>
       <tspan alignment-baseline="hanging" dy="-4">{{perspectiveTeam.player.title}}</tspan>
     </text>
     <svg *ngFor="let piece of perspectiveTeam.captures;let i=index" [attr.x]="i*13" y="1" width="13" height="13"

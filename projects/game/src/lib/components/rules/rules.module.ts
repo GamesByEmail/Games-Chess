@@ -4,7 +4,7 @@ import { TemplateProjectionModule } from '@packageforge/template-projection';
 
 import { RulesModule as BaseRulesModule } from '@gamesbyemail/base';
 
-import { ChessBoardModule } from '../../boards/default/chess-board.module';
+import { BoardModule } from '../../boards/default/board.module';
 
 import { RulesComponent } from './rules.component';
 
@@ -13,7 +13,7 @@ import { RulesComponent } from './rules.component';
   imports: [
     CommonModule,
     BaseRulesModule,
-    ChessBoardModule,
+    BoardModule,
     TemplateProjectionModule
   ],
   declarations: [

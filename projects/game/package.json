@@ -6,7 +6,7 @@
     "@angular/cdk": "^7.1.1",
     "@angular/common": "^7.1.3",
     "@angular/core": "^7.1.3",
-    "@gamesbyemail/base": "^0.0.21",
+    "@gamesbyemail/base": "^0.0.22",
     "@packageforge/deep-copy": "^0.0.2",
     "@packageforge/deferred": "^0.0.5",
     "@packageforge/geometry2d": "^0.0.10",

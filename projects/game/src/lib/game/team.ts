@@ -24,7 +24,7 @@ export class Team extends BaseTeam<Game, IGameOptions, IGameState, IGameSave, Bo
     piece.changeTerritory(undefined);
     this.captures.push(piece);
   }
-  getTitle(): string {
+  get title(): string {
     return this.id;
   }
   setState(state: string): string {
