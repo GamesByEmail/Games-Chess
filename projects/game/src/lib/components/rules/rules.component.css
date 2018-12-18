@@ -4,3 +4,6 @@
   width:62px;
   height:62px;
 }
+.clear-left {
+  clear: left;
+}

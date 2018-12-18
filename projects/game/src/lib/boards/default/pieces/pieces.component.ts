@@ -6,7 +6,7 @@ import { ITemplateLibrary, ITemplateSize, TemplateLibraryService } from '@packag
 import { IPieceKey } from '../../../game/i-piece-key';
 
 @Component({
-  selector: 'gamesbyemail-games-chess-default-piecelibrary',
+  selector: '[gamesbyemail-games-chess-default-piecelibrary]',
   templateUrl: './pieces.component.html',
   styleUrls: ['./pieces.component.css']
 })
