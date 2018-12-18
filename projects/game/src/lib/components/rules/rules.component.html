@@ -18,7 +18,7 @@
   <p>A piece is taken when an opposing piece moves to occupy it's square. The taken piece is removed from the board</p>
   <h5><a name="Pieces">Pieces</a></h5>
   <p class="clear-left">
-    <span class="piece-image" [template-projection]="templateLibrary" [key]="{type:'Pawn',team:team}"></span>
+    <span class="piece-image" [template-projection]="pieceLibrary" [key]="{type:'Pawn',team:team}"></span>
     <b><a name="Pieces.Pawns">Pawns</a></b> move directly forward one space if the space is not occupied. Pawns
     can only attack one space diagonaly forward to either side, they cannot attack directly forward.
   </p>
@@ -35,28 +35,28 @@
     of a pawn for another piece is called ‘promotion’ and the effect of the new piece is immediate.
   </p>
   <p>
-    <span class="piece-image" [template-projection]="templateLibrary" [key]="{type:'Knight',team:team}"></span>
+    <span class="piece-image" [template-projection]="pieceLibrary" [key]="{type:'Knight',team:team}"></span>
     <b><a name="Pieces.Knights">Knights</a></b> both move and attack in an L shape, either two spaces vertically
     and one horizontally, or one vertically and two horizontally. Knights can jump over any piece (though any jumped
     pieces are not removed) and therefore cannot be blocked.
   </p>
   <p class="clear-left">
-    <span class="piece-image" [template-projection]="templateLibrary" [key]="{type:'Bishop',team:team}"></span>
+    <span class="piece-image" [template-projection]="pieceLibrary" [key]="{type:'Bishop',team:team}"></span>
     <b><a name="Pieces.Bishops">Bishops</a></b> both move and attack any number of spaces diagonaly in a straight
     line. They may may not jump pieces in their path and can therefore be blocked.
   </p>
   <p class="clear-left">
-    <span class="piece-image" [template-projection]="templateLibrary" [key]="{type:'Rook',team:team}"></span>
+    <span class="piece-image" [template-projection]="pieceLibrary" [key]="{type:'Rook',team:team}"></span>
     <b><a name="Pieces.Rooks">Rooks</a></b> can both move and attack any number of spaces horizontaly or
     vertically in a straight line. They may not jump pieces in their path and can therefore be blocked.
   </p>
   <p class="clear-left">
-    <span class="piece-image" [template-projection]="templateLibrary" [key]="{type:'Queen',team:team}"></span>
+    <span class="piece-image" [template-projection]="pieceLibrary" [key]="{type:'Queen',team:team}"></span>
     <b><a name="Pieces.Queens">Queens</a></b> both move and attack any number of spaces in any direction in a
     straight line. They may not jump pieces in their path and can therefore be blocked.
   </p>
   <p class="clear-left">
-    <span class="piece-image" [template-projection]="templateLibrary" [key]="{type:'King',team:team}"></span>
+    <span class="piece-image" [template-projection]="pieceLibrary" [key]="{type:'King',team:team}"></span>
     <b><a name="Pieces.Kings">Kings</a></b> both move and attack one space in any direction.
   </p>
   <p><a name="Pieces.Kings.Castling"><i>Castling:</i></a> A king may move two spaces left or right and it's rook in
@@ -85,5 +85,5 @@
     <li>Since there is no concept of 'check' or 'checkmate', the object of the game is to capture the opponent's
       king.</li>
   </ul>
-  <svg gamesbyemail-games-chess-default-piecelibrary #templateLibrary width="0" height="0" style="display:inline"></svg>
+  <svg gamesbyemail-games-chess-default-piecelibrary #pieceLibrary width="0" height="0" style="display:inline"></svg>
 </gamesbyemail-base-rules>

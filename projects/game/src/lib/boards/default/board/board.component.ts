@@ -40,7 +40,7 @@ export class BoardComponent implements AfterViewInit {
   @ViewChild('boardArea') boardArea!: ElementRef<SVGElement>;
   @ViewChild('dialogArea', { read: ViewContainerRef }) dialogArea!: ViewContainerRef;
   @ViewChild('dialogOverlay', { read: ElementRef }) dialogOverlay!: ElementRef;
-  @ViewChild('templateLibrary') pieceLibrary!: any;
+  @ViewChild('pieceLibrary') pieceLibrary!: any;
 
   mousemove: Observable<MouseEvent> = <any>fromEvent(document, 'mousemove');
   mouseup: Observable<any> = fromEvent(document, 'mouseup').pipe(map(() => undefined));
