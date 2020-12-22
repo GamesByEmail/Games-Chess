@@ -1,1 +1,1 @@
-# @gamesbyemail/chess
+# @gamesbyemail/games-chess
