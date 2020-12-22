@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 306" style="width:66%">
+  <defs gamesbyemail-games-chess-default-piecelibrary #pieceLibrary></defs>
+  <text x="128" y="3" text-anchor="middle" alignment-baseline="hanging" style="font: bold 20px sans-serif">{{game.header}}</text>
+  <g [attr.transform]="boardTransform(0,35,256,256)">
+    <rect x="0" y="0" width="256" height="256" color="border" />
+    <rect #boardArea x="6" y="6" width="244" height="244" />
+    <g transform="translate(4,4)">
+      <g *ngFor="let territory of game.board.territories" [attr.transform]="territoryTransform(territory,31,31)">
+        <rect width="31" height="31" [ngClass]="classes(territory)" (mousedown)="territoryMousedown(territory)"
+          (mouseup)="territoryMouseup(territory)" />
+        <rect *ngIf="(game.over || !territory.dark) && territory.highlight" x="0.5" y="0.5" width="30" height="30" class="highlight" />
+      </g>
+      <g *ngFor="let territory of game.board.territories">
+        <g *ngIf="(game.over || !territory.dark) && territory.piece" [attr.transform]="territoryTransform(territory,31,31,true)">
+          <svg width="31" height="31" [template-projection]="pieceLibrary" [bindElement]="territory.piece" [entity]="territory.piece"
+            [context]="{dark:territory.dark}" class="piece" [@showCheck]="territory.piece.showCheck"></svg>
+        </g>
+      </g>
+    </g>
+    <rect #dialogOverlay x="0" y="0" width="256" height="256" fill="rgba(0,0,0,0.4)" style="display:none"/>
+  </g>
+  <g transform="translate(128 170.5) scale(0.5)">
+    <g #dialogArea></g>
+  </g>
+  <g transform="translate(0,35)">
+    <text x="256" text-anchor="end" style="font: bold 15px sans-serif">
+      <tspan *ngIf="opposingTeam.myTurn" alignment-baseline="after-edge">&#10145; </tspan>
+      <tspan alignment-baseline="after-edge" dy="-4" style="font-size:60%; font-weight:normal">{{opposingTeam.title}} - </tspan>
+      <tspan alignment-baseline="after-edge" dy="4">{{opposingTeam.player.title}}</tspan>
+    </text>
+    <svg *ngFor="let piece of opposingTeam.captures;let i=index" [attr.x]="i*13" y="-14" width="13" height="13"
+      [template-projection]="pieceLibrary" [bindElement]="piece" [entity]="piece" class="piece"></svg>
+  </g>
+  <g transform="translate(0,291)">
+    <text x="256" text-anchor="end" style="font: bold 15px sans-serif">
+      <tspan *ngIf="perspectiveTeam.myTurn" alignment-baseline="hanging">&#10145; </tspan>
+      <tspan alignment-baseline="hanging" dy="4" style="font-size:60%; font-weight:normal">{{perspectiveTeam.title}} - </tspan>
+      <tspan alignment-baseline="hanging" dy="-4">{{perspectiveTeam.player.title}}</tspan>
+    </text>
+    <svg *ngFor="let piece of perspectiveTeam.captures;let i=index" [attr.x]="i*13" y="1" width="13" height="13"
+      [template-projection]="pieceLibrary" [bindElement]="piece" [entity]="piece" class="piece"></svg>
+  </g>
+</svg>
+<gamesbyemail-games-chess-default-log #log [game]="game" [pieces]="pieceLibrary"></gamesbyemail-games-chess-default-log>
